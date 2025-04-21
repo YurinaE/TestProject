@@ -33,9 +33,7 @@ namespace TestProject
             messageDataList.Add(message);
             messageGrid.ItemsSource = messageDataList;
 
-            var result = await _mediator.Send(new InsertMessageDataQuery(message));
-            if (result)
-                return;
+            await _mediator.Send(new InsertMessageDataQuery(message));
         }
     }
 }
